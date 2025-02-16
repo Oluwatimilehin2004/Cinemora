@@ -12,6 +12,7 @@ const Detail = () => {
       const response = await fetch(`${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`)
       const data = await response.json()
       setTrailerKey(data.results.find((movie) => movie.type === 'Trailer' && movie.site === 'YouTube') )  
+      console.log(data.result)
     }
     const fetchDetail = async () => {       
       // const response = https://api.themoviedb.org/3/movie/1241982?api_key=778dcf02894f40ff2a5de48a0a87f49e
@@ -44,12 +45,7 @@ const Detail = () => {
             ></iframe>
           {/* {trailerKey ? <button onClick={() => setShowTrailer(true)}>Show Trailer</button>: "No Trailer"} */}
         </div>
-      </div>
-
-
-     
-         
-       
+      </div>      
     </div>
   )
 }
